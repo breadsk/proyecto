@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Carrito de compras</h1>
+    <ul>
+        {% for item in items%}
+        <li>{{% item.producto.nombre%}} - {{item.cantidad}}- {{item.subtotal}}<a href="{% url 'eliminar_carrito' item.id %}">Eliminar</a></li>
+
+    </ul>
+    <a href="{% url 'lista_productos%}">Volver a la lista de productos</a>
+</body>
+</html>
